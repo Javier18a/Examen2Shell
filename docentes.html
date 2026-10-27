@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docentes | EduControl</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/docentes.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>EduControl</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="estudiantes.html"><i class="fa-solid fa-user-graduate"></i> Estudiantes</a></li>
+                <li><a href="docentes.html" class="activo"><i class="fa-solid fa-chalkboard-user"></i> Docentes</a></li>
+                <li><a href="asignaturas.html"><i class="fa-solid fa-book-open"></i> Asignaturas</a></li>
+                <li><a href="calificaciones.html"><i class="fa-solid fa-clipboard-check"></i> Calificaciones</a></li>
+                <li><a href="asistencia.html"><i class="fa-solid fa-calendar-check"></i> Asistencia</a></li>
+                <li><a href="historial.html"><i class="fa-solid fa-clock-rotate-left"></i> Historial académico</a></li>
+                <li><a href="boletin.html"><i class="fa-solid fa-file-lines"></i> Boletín</a></li>
+                <li><a href="reportes.html"><i class="fa-solid fa-chart-column"></i> Reportes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="encabezado-pagina">
+            <div>
+                <h1>Gestión de docentes</h1>
+                <p>Consulta la estructura del módulo de administración del personal docente.</p>
+            </div>
+
+            <button type="button" class="boton boton-principal" data-mensaje>
+                <i class="fa-solid fa-user-plus"></i>
+                Registrar docente
+            </button>
+        </section>
+
+        <section class="panel">
+            <div class="panel-encabezado">
+                <div>
+                    <h2>Listado de docentes</h2>
+                    <p>En este apartado se mostrarán los registros del personal docente.</p>
+                </div>
+
+                <i class="fa-solid fa-chalkboard-user icono-panel"></i>
+            </div>
+
+            <div class="herramientas">
+                <div class="campo-busqueda">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" placeholder="Buscar docente..." disabled>
+                </div>
+
+                <button type="button" class="boton boton-secundario" data-mensaje>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Buscar
+                </button>
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre completo</th>
+                            <th>Identificación</th>
+                            <th>Especialidad</th>
+                            <th>Correo electrónico</th>
+                            <th>Teléfono</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td colspan="6" class="sin-registros">
+                                <i class="fa-solid fa-folder-open"></i>
+                                <p>No hay información disponible</p>
+                                <span>Los registros se mostrarán cuando el sistema esté conectado a una base de datos.</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-encabezado">
+                <div>
+                    <h2>Registro de docentes</h2>
+                    <p>Vista previa de los campos que tendrá el formulario.</p>
+                </div>
+
+                <i class="fa-solid fa-address-card icono-panel"></i>
+            </div>
+
+            <form id="formulario-docente">
+                <div class="formulario-grid">
+                    <div class="campo">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" placeholder="Nombre completo">
+                    </div>
+
+                    <div class="campo">
+                        <label for="identificacion">Identificación</label>
+                        <input type="text" id="identificacion" placeholder="Número de identificación" >
+                    </div>
+
+                    <div class="campo">
+                        <label for="especialidad">Especialidad</label>
+                        <select id="especialidad" >
+                            <option value="" selected></option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" placeholder="Correo electrónico">
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" placeholder="Teléfono de contacto">
+                    </div>
+
+                    <div class="campo">
+                        <label for="nivel">Nivel educativo</label>
+                        <select id="nivel">
+                            <option value="" selected></option>
+                        </select>
+                    </div>
+
+                    <div class="campo campo-completo">
+                        <label for="direccion">Dirección</label>
+                        <textarea id="direccion" rows="3" placeholder="Dirección del docente" ></textarea>
+                    </div>
+                </div>
+
+                <div class="acciones-formulario">
+                    <button type="button" class="boton boton-secundario" data-mensaje>
+                        Cancelar
+                    </button>
+
+                    <button type="button" class="boton boton-principal" data-mensaje>
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Guardar docente
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <div class="notificacion" id="notificacion" role="status" aria-live="polite">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>Esta función no está disponible porque el sistema es un prototipo visual.</span>
+        <button type="button" id="cerrar-notificacion" aria-label="Cerrar mensaje">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <footer>
+        <p>EduControl | Sistema de Control de Calificaciones y Estudiantes</p>
+    </footer>
+
+    <script src="script/docentes.js" defer></script>
+</body>
+</html>

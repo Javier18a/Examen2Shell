@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Control de Calificaciones y Estudiantes</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>EduControl</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html" class="activo"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="estudiantes.html"><i class="fa-solid fa-user-graduate"></i> Estudiantes</a></li>
+                <li><a href="docentes.html"><i class="fa-solid fa-chalkboard-user"></i> Docentes</a></li>
+                <li><a href="asignaturas.html"><i class="fa-solid fa-book-open"></i> Asignaturas</a></li>
+                <li><a href="calificaciones.html"><i class="fa-solid fa-clipboard-check"></i> Calificaciones</a></li>
+                <li><a href="asistencia.html"><i class="fa-solid fa-calendar-check"></i> Asistencia</a></li>
+                <li><a href="historial.html"><i class="fa-solid fa-clock-rotate-left"></i> Historial académico</a></li>
+                <li><a href="boletin.html"><i class="fa-solid fa-file-lines"></i> Boletín</a></li>
+                <li><a href="reportes.html"><i class="fa-solid fa-chart-column"></i> Reportes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="bienvenida">
+            <div>
+                <h1>Sistema de Control de Calificaciones y Estudiantes</h1>
+                <p>Administra la información académica de estudiantes, docentes y asignaturas desde un solo lugar.</p>
+                <a href="estudiantes.html" class="boton">
+                    <i class="fa-solid fa-users"></i>
+                    Gestionar estudiantes
+                </a>
+            </div>
+            <i class="fa-solid fa-graduation-cap icono-bienvenida"></i>
+        </section>
+
+        <section class="resumen">
+            <h2>Resumen académico</h2>
+
+            <div class="tarjetas">
+                <article class="tarjeta">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <h3>Estudiantes</h3>
+                    <a href="estudiantes.html">Ver estudiantes <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+
+                <article class="tarjeta">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    <h3>Docentes</h3>
+                    <a href="docentes.html">Ver docentes <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+
+                <article class="tarjeta">
+                    <i class="fa-solid fa-book-open"></i>
+                    <h3>Asignaturas</h3>
+                    <a href="asignaturas.html">Ver asignaturas <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+
+                <article class="tarjeta">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Promedio general</h3>
+                    <a href="reportes.html">Ver reportes <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+            </div>
+        </section>
+
+        <section class="accesos">
+            <h2>Accesos rápidos</h2>
+
+            <div class="lista-accesos">
+                <a href="calificaciones.html">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    <span>Gestionar calificaciones</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <a href="asistencia.html">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Controlar asistencia</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <a href="historial.html">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <span>Consultar historial académico</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <a href="boletin.html">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Consultar boletines</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 EduControl | Sistema de Control de Calificaciones y Estudiantes</p>
+    </footer>
+
+    <script src="script/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial académico | EduControl</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/historial.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>EduControl</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="estudiantes.html"><i class="fa-solid fa-user-graduate"></i> Estudiantes</a></li>
+                <li><a href="docentes.html"><i class="fa-solid fa-chalkboard-user"></i> Docentes</a></li>
+                <li><a href="asignaturas.html"><i class="fa-solid fa-book-open"></i> Asignaturas</a></li>
+                <li><a href="calificaciones.html"><i class="fa-solid fa-clipboard-check"></i> Calificaciones</a></li>
+                <li><a href="asistencia.html"><i class="fa-solid fa-calendar-check"></i> Asistencia</a></li>
+                <li><a href="historial.html" class="activo"><i class="fa-solid fa-clock-rotate-left"></i> Historial académico</a></li>
+                <li><a href="boletin.html"><i class="fa-solid fa-file-lines"></i> Boletín</a></li>
+                <li><a href="reportes.html"><i class="fa-solid fa-chart-column"></i> Reportes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido-historial">
+        <section class="encabezado-pagina">
+            <div>
+                <h1>Historial académico</h1>
+                <p>Consulta del recorrido académico de los estudiantes.</p>
+            </div>
+            <button type="button" class="boton" id="mostrar-formulario">
+                <i class="fa-solid fa-plus"></i>
+                Nuevo registro
+            </button>
+        </section>
+
+        <section class="panel">
+            <div class="panel-encabezado">
+                <div>
+                    <h2>Historial de registros académicos</h2>
+                    <p>Los registros del historial académico se mostrarán en esta sección.</p>
+                </div>
+                <i class="fa-solid fa-clock-rotate-left icono-panel"></i>
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Estudiante</th>
+                            <th>Periodo académico</th>
+                            <th>Asignatura</th>
+                            <th>Calificación</th>
+                            <th>Observaciones</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="6" class="tabla-vacia">
+                                <i class="fa-solid fa-folder-open"></i>
+                                <h3>Sin registros académicos</h3>
+                                <p>El historial académico aparecerá en este espacio.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel panel-formulario" id="formulario-historial">
+            <div class="panel-encabezado">
+                <div>
+                    <h2>Información académica</h2>
+                    <p>Formulario para registrar información del historial académico.</p>
+                </div>
+                <i class="fa-solid fa-file-pen icono-panel"></i>
+            </div>
+
+            <form id="form-historial">
+                <div class="formulario-grid">
+                    <div class="campo">
+                        <label for="estudiante">Estudiante</label>
+                        <select id="estudiante" name="estudiante">
+                            <option value="" selected></option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="periodo">Periodo académico</label>
+                        <input type="text" id="periodo" name="periodo" placeholder="Escribe el periodo académico">
+                    </div>
+
+                    <div class="campo">
+                        <label for="asignatura">Asignatura</label>
+                        <select id="asignatura" name="asignatura">
+                            <option value="" selected></option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="calificacion">Calificación</label>
+                        <input type="number" id="calificacion" name="calificacion" placeholder="Escribe la calificación">
+                    </div>
+
+                    <div class="campo">
+                        <label for="fecha">Fecha del registro</label>
+                        <input type="date" id="fecha" name="fecha">
+                    </div>
+
+                    <div class="campo">
+                        <label for="tipo-registro">Tipo de registro</label>
+                        <select id="tipo-registro" name="tipo-registro">
+                            <option value="" selected></option>
+                        </select>
+                    </div>
+
+                    <div class="campo campo-completo">
+                        <label for="observaciones">Observaciones</label>
+                        <textarea id="observaciones" name="observaciones" rows="4" placeholder="Escribe las observaciones correspondientes"></textarea>
+                    </div>
+                </div>
+
+                <div class="acciones-formulario">
+                    <button type="reset" class="boton boton-secundario">
+                        Limpiar campos
+                    </button>
+                    <button type="submit" class="boton">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Registrar información
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>EduControl | Sistema de Control de Calificaciones y Estudiantes</p>
+    </footer>
+
+    <script src="script/funciones.js"></script>
+    <script src="script/historial.js"></script>
+</body>
+</html>

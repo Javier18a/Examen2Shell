@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletín académico | EduControl</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/boletin.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>EduControl</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="estudiantes.html"><i class="fa-solid fa-user-graduate"></i> Estudiantes</a></li>
+                <li><a href="docentes.html"><i class="fa-solid fa-chalkboard-user"></i> Docentes</a></li>
+                <li><a href="asignaturas.html"><i class="fa-solid fa-book-open"></i> Asignaturas</a></li>
+                <li><a href="calificaciones.html"><i class="fa-solid fa-clipboard-check"></i> Calificaciones</a></li>
+                <li><a href="asistencia.html"><i class="fa-solid fa-calendar-check"></i> Asistencia</a></li>
+                <li><a href="historial.html"><i class="fa-solid fa-clock-rotate-left"></i> Historial académico</a></li>
+                <li><a href="boletin.html" class="activo"><i class="fa-solid fa-file-lines"></i> Boletín</a></li>
+                <li><a href="reportes.html"><i class="fa-solid fa-chart-column"></i> Reportes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido-boletin">
+        <section class="encabezado-pagina">
+            <div>
+                <h1>Boletín académico</h1>
+                <p>Consulta y preparación de boletines de calificaciones.</p>
+            </div>
+            <button type="button" class="boton" id="ir-a-formulario">
+                <i class="fa-solid fa-file-circle-plus"></i>
+                Preparar boletín
+            </button>
+        </section>
+
+        <section class="panel">
+            <div class="panel-encabezado">
+                <div>
+                    <h2>Boletines académicos</h2>
+                    <p>En esta sección se visualizarán los boletines académicos.</p>
+                </div>
+                <i class="fa-solid fa-file-lines icono-panel"></i>
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Estudiante</th>
+                            <th>Periodo académico</th>
+                            <th>Nivel o grado</th>
+                            <th>Fecha de emisión</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="6" class="tabla-vacia">
+                                <i class="fa-solid fa-folder-open"></i>
+                                <h3>Sin boletines disponibles</h3>
+                                <p>Los boletines académicos aparecerán en este espacio.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel panel-formulario" id="seccion-formulario">
+            <div class="panel-encabezado">
+                <div>
+                    <h2>Preparación del boletín</h2>
+                    <p>Completa los campos para visualizar el diseño del formulario.</p>
+                </div>
+                <i class="fa-solid fa-file-pen icono-panel"></i>
+            </div>
+
+            <form id="form-boletin">
+                <div class="formulario-grid">
+                    <div class="campo">
+                        <label for="estudiante">Estudiante</label>
+                        <select id="estudiante" name="estudiante">
+                            <option value="" selected></option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="periodo">Periodo académico</label>
+                        <input type="text" id="periodo" name="periodo" placeholder="Escribe el periodo académico">
+                    </div>
+
+                    <div class="campo">
+                        <label for="grado">Nivel o grado</label>
+                        <select id="grado" name="grado">
+                            <option value="" selected></option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="fecha-emision">Fecha de emisión</label>
+                        <input type="date" id="fecha-emision" name="fecha-emision">
+                    </div>
+
+                    <div class="campo campo-completo">
+                        <label for="observaciones">Observaciones generales</label>
+                        <textarea id="observaciones" name="observaciones" rows="4" placeholder="Escribe las observaciones académicas"></textarea>
+                    </div>
+                </div>
+
+                <div class="acciones-formulario">
+                    <button type="reset" class="boton boton-secundario">
+                        Limpiar campos
+                    </button>
+                    <button type="submit" class="boton">
+                        <i class="fa-solid fa-file-circle-check"></i>
+                        Generar boletín
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>EduControl | Sistema de Control de Calificaciones y Estudiantes</p>
+    </footer>
+
+    <script src="script/boletin.js"></script>
+</body>
+</html>

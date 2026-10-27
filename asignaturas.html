@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignaturas | EduControl</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/asignaturas.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>EduControl</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="estudiantes.html"><i class="fa-solid fa-user-graduate"></i> Estudiantes</a></li>
+                <li><a href="docentes.html"><i class="fa-solid fa-chalkboard-user"></i> Docentes</a></li>
+                <li><a href="asignaturas.html" class="activo"><i class="fa-solid fa-book-open"></i> Asignaturas</a></li>
+                <li><a href="calificaciones.html"><i class="fa-solid fa-clipboard-check"></i> Calificaciones</a></li>
+                <li><a href="asistencia.html"><i class="fa-solid fa-calendar-check"></i> Asistencia</a></li>
+                <li><a href="historial.html"><i class="fa-solid fa-clock-rotate-left"></i> Historial académico</a></li>
+                <li><a href="boletin.html"><i class="fa-solid fa-file-lines"></i> Boletín</a></li>
+                <li><a href="reportes.html"><i class="fa-solid fa-chart-column"></i> Reportes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido-asignaturas">
+        <section class="encabezado-pagina">
+            <div>
+                <h1>Asignaturas</h1>
+                <p>Consulta y administración de las asignaturas académicas.</p>
+            </div>
+            <button type="button" class="boton" data-mensaje>
+                <i class="fa-solid fa-plus"></i>
+                Nueva asignatura
+            </button>
+        </section>
+
+        <section class="panel">
+            <div class="panel-encabezado">
+                <div>
+                    <h2>Listado de asignaturas</h2>
+                    <p>Las asignaturas registradas se mostrarán en esta sección.</p>
+                </div>
+                <div class="busqueda">
+                    <input type="search" placeholder="Buscar asignatura..." disabled>
+                    <button type="button" class="boton boton-secundario" data-mensaje aria-label="Buscar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre de la asignatura</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Docente asignado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="5" class="tabla-vacia">
+                                <i class="fa-solid fa-book-open"></i>
+                                <h3>Sin asignaturas registradas</h3>
+                                <p>En esta sección se mostrarán las asignaturas del sistema.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel panel-formulario">
+            <div class="panel-encabezado">
+                <div>
+                    <h2>Información de la asignatura</h2>
+                    <p>Vista previa del formulario de asignaturas.</p>
+                </div>
+                <i class="fa-solid fa-book-open icono-panel"></i>
+            </div>
+
+            <form>
+                <div class="formulario-grid">
+                    <div class="campo">
+                        <label for="nombre">Nombre de la asignatura</label>
+                        <input type="text" id="nombre" placeholder="Nombre de la asignatura" disabled>
+                    </div>
+
+                    <div class="campo">
+                        <label for="codigo">Código de la asignatura</label>
+                        <input type="text" id="codigo" placeholder="Código de la asignatura" disabled>
+                    </div>
+
+                    <div class="campo">
+                        <label for="docente">Docente asignado</label>
+                        <select id="docente" disabled>
+                            <option value="" selected></option>
+                        </select>
+                    </div>
+
+                    <div class="campo campo-completo">
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" rows="4" placeholder="Descripción de la asignatura" disabled></textarea>
+                    </div>
+                </div>
+
+                <div class="acciones-formulario">
+                    <button type="button" class="boton boton-secundario" data-mensaje>
+                        Cancelar
+                    </button>
+                    <button type="button" class="boton" data-mensaje>
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Guardar asignatura
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <div class="notificacion" id="notificacion" role="status" aria-live="polite">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>Esta función no está disponible porque el sistema es un prototipo visual.</span>
+        <button type="button" id="cerrar-notificacion" aria-label="Cerrar mensaje">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <footer>
+        <p>EduControl | Sistema de Control de Calificaciones y Estudiantes</p>
+    </footer>
+
+    <script src="script/asignaturas.js"></script>
+</body>
+</html>

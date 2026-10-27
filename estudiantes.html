@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudiantes | Sistema de Control Académico</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/estudiantes.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>EduControl</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="estudiantes.html" class="activo"><i class="fa-solid fa-user-graduate"></i> Estudiantes</a></li>
+                <li><a href="docentes.html"><i class="fa-solid fa-chalkboard-user"></i> Docentes</a></li>
+                <li><a href="asignaturas.html"><i class="fa-solid fa-book-open"></i> Asignaturas</a></li>
+                <li><a href="calificaciones.html"><i class="fa-solid fa-clipboard-check"></i> Calificaciones</a></li>
+                <li><a href="asistencia.html"><i class="fa-solid fa-calendar-check"></i> Asistencia</a></li>
+                <li><a href="historial.html"><i class="fa-solid fa-clock-rotate-left"></i> Historial académico</a></li>
+                <li><a href="boletin.html"><i class="fa-solid fa-file-lines"></i> Boletín</a></li>
+                <li><a href="reportes.html"><i class="fa-solid fa-chart-column"></i> Reportes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="encabezado-pagina">
+            <div>
+                <h1>Gestión de estudiantes</h1>
+                <p>Administra la información y los registros de los estudiantes.</p>
+            </div>
+
+            <button type="button" class="boton boton-principal" id="abrir-formulario">
+                <i class="fa-solid fa-user-plus"></i>
+                Registrar estudiante
+            </button>
+        </section>
+
+        <section class="panel">
+            <div class="panel-encabezado">
+                <div>
+                    <h2>Listado de estudiantes</h2>
+                    <p>Consulta y administra los registros estudiantiles.</p>
+                </div>
+                <i class="fa-solid fa-users icono-panel"></i>
+            </div>
+
+            <div class="herramientas">
+                <div class="campo-busqueda">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" id="buscar-estudiante" placeholder="Buscar estudiante...">
+                </div>
+
+                <button type="button" class="boton boton-secundario" id="limpiar-filtros">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    Limpiar
+                </button>
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre completo</th>
+                            <th>Identificación</th>
+                            <th>Grado</th>
+                            <th>Sección</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-estudiantes">
+                        <tr id="fila-vacia">
+                            <td colspan="6" class="sin-registros">
+                                <i class="fa-solid fa-folder-open"></i>
+                                <p>No hay estudiantes registrados.</p>
+                                <span>Los registros aparecerán aquí cuando se agreguen.</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel formulario-panel" id="seccion-formulario">
+            <div class="panel-encabezado">
+                <div>
+                    <h2 id="titulo-formulario">Registrar estudiante</h2>
+                    <p>Completa los campos para introducir la información estudiantil.</p>
+                </div>
+
+                <button type="button" class="boton-cerrar" id="cerrar-formulario" aria-label="Cerrar formulario">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form id="formulario-estudiante">
+                <div class="formulario-grid">
+                    <div class="campo">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Escribe el nombre completo" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="identificacion">Identificación</label>
+                        <input type="text" id="identificacion" name="identificacion" placeholder="Escribe la identificación" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="fecha-nacimiento">Fecha de nacimiento</label>
+                        <input type="date" id="fecha-nacimiento" name="fechaNacimiento" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="genero">Género</label>
+                        <input type="text" id="genero" name="genero" placeholder="Escribe el género" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="grado">Nivel educativo</label>
+                        <input type="text" id="grado" name="grado" placeholder="Escribe el nivel educativo" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="seccion">Sección</label>
+                        <input type="text" id="seccion" name="seccion" placeholder="Escribe la sección" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="tutor">Nombre del padre, madre o tutor</label>
+                        <input type="text" id="tutor" name="tutor" placeholder="Escribe el nombre del tutor" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefono">Teléfono de contacto</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Escribe el teléfono">
+                    </div>
+
+                    <div class="campo campo-completo">
+                        <label for="direccion">Dirección</label>
+                        <textarea id="direccion" name="direccion" rows="3" placeholder="Escribe la dirección del estudiante"></textarea>
+                    </div>
+                </div>
+
+                <div class="acciones-formulario">
+                    <button type="button" class="boton boton-secundario" id="cancelar-formulario">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="boton boton-principal">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Guardar estudiante
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>EduControl | Sistema de Control de Calificaciones y Estudiantes</p>
+    </footer>
+
+    <script src="script/estudiantes.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificaciones | EduControl</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/calificaciones.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>EduControl</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="estudiantes.html"><i class="fa-solid fa-user-graduate"></i> Estudiantes</a></li>
+                <li><a href="docentes.html"><i class="fa-solid fa-chalkboard-user"></i> Docentes</a></li>
+                <li><a href="asignaturas.html"><i class="fa-solid fa-book-open"></i> Asignaturas</a></li>
+                <li><a href="calificaciones.html" class="activo"><i class="fa-solid fa-clipboard-check"></i> Calificaciones</a></li>
+                <li><a href="asistencia.html"><i class="fa-solid fa-calendar-check"></i> Asistencia</a></li>
+                <li><a href="historial.html"><i class="fa-solid fa-clock-rotate-left"></i> Historial académico</a></li>
+                <li><a href="boletin.html"><i class="fa-solid fa-file-lines"></i> Boletín</a></li>
+                <li><a href="reportes.html"><i class="fa-solid fa-chart-column"></i> Reportes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido-calificaciones">
+        <section class="encabezado-pagina">
+            <div>
+                <h1>Calificaciones</h1>
+                <p>Consulta y gestión académica de las evaluaciones.</p>
+            </div>
+            <button type="button" class="boton" data-mensaje>
+                <i class="fa-solid fa-plus"></i>
+                Nueva calificación
+            </button>
+        </section>
+
+        <section class="panel">
+            <div class="panel-encabezado">
+                <div>
+                    <h2>Registro de calificaciones</h2>
+                    <p>En esta sección se visualizarán las calificaciones académicas.</p>
+                </div>
+                <i class="fa-solid fa-clipboard-list icono-panel"></i>
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Estudiante</th>
+                            <th>Asignatura</th>
+                            <th>Evaluación</th>
+                            <th>Calificación</th>
+                            <th>Observaciones</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="6" class="tabla-vacia">
+                                <i class="fa-solid fa-clipboard-check"></i>
+                                <h3>Sin calificaciones registradas</h3>
+                                <p>Las evaluaciones aparecerán aquí cuando exista información registrada.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel panel-formulario">
+            <div class="panel-encabezado">
+                <div>
+                    <h2>Información de la evaluación</h2>
+                    <p>Vista previa del formulario de calificaciones.</p>
+                </div>
+                <i class="fa-solid fa-pen-to-square icono-panel"></i>
+            </div>
+
+            <form>
+                <div class="formulario-grid">
+                    <div class="campo">
+                        <label for="estudiante">Estudiante</label>
+                        <select id="estudiante" >
+                            <option value="" selected></option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="asignatura">Asignatura</label>
+                        <select id="asignatura" >
+                            <option value="" selected></option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="evaluacion">Tipo de evaluación</label>
+                        <select id="evaluacion" >
+                            <option value="" selected></option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="calificacion">Calificación obtenida</label>
+                        <input type="number" id="calificacion" placeholder="Calificación" >
+                    </div>
+
+                    <div class="campo campo-completo">
+                        <label for="observaciones">Observaciones</label>
+                        <textarea id="observaciones" rows="4" placeholder="Observaciones de la evaluación" ></textarea>
+                    </div>
+                </div>
+
+                <div class="acciones-formulario">
+                    <button type="button" class="boton boton-secundario" data-mensaje>
+                        Cancelar
+                    </button>
+                    <button type="button" class="boton" data-mensaje>
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Guardar calificación
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <div class="notificacion" id="notificacion" role="status" aria-live="polite">
+        <i class="fa-solid fa-circle-info"></i>
+        <span>Esta función no está disponible porque el sistema es un prototipo visual.</span>
+        <button type="button" id="cerrar-notificacion" aria-label="Cerrar mensaje">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <footer>
+        <p>EduControl | Sistema de Control de Calificaciones y Estudiantes</p>
+    </footer>
+
+    <script src="script/calificaciones.js"></script>
+</body>
+</html>

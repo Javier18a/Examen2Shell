@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes | EduControl</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/reportes.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>EduControl</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="estudiantes.html"><i class="fa-solid fa-user-graduate"></i> Estudiantes</a></li>
+                <li><a href="docentes.html"><i class="fa-solid fa-chalkboard-user"></i> Docentes</a></li>
+                <li><a href="asignaturas.html"><i class="fa-solid fa-book-open"></i> Asignaturas</a></li>
+                <li><a href="calificaciones.html"><i class="fa-solid fa-clipboard-check"></i> Calificaciones</a></li>
+                <li><a href="asistencia.html"><i class="fa-solid fa-calendar-check"></i> Asistencia</a></li>
+                <li><a href="historial.html"><i class="fa-solid fa-clock-rotate-left"></i> Historial académico</a></li>
+                <li><a href="boletin.html"><i class="fa-solid fa-file-lines"></i> Boletín</a></li>
+                <li><a href="reportes.html" class="activo"><i class="fa-solid fa-chart-column"></i> Reportes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido-reportes">
+        <section class="encabezado-pagina">
+            <div>
+                <h1>Reportes académicos</h1>
+                <p>Consulta y preparación de informes del sistema académico.</p>
+            </div>
+        </section>
+
+        <section class="tarjetas-reportes">
+            <article class="tarjeta-reporte">
+                <div class="icono-reporte">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+                <div>
+                    <h2>Reporte de estudiantes</h2>
+                    <p>Vista de información académica relacionada con los estudiantes.</p>
+                </div>
+                <button type="button" class="boton boton-secundario" data-reporte="estudiantes">
+                    <i class="fa-solid fa-eye"></i>
+                    Consultar
+                </button>
+            </article>
+
+            <article class="tarjeta-reporte">
+                <div class="icono-reporte">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                </div>
+                <div>
+                    <h2>Reporte de calificaciones</h2>
+                    <p>Vista de información sobre evaluaciones y calificaciones.</p>
+                </div>
+                <button type="button" class="boton boton-secundario" data-reporte="calificaciones">
+                    <i class="fa-solid fa-eye"></i>
+                    Consultar
+                </button>
+            </article>
+
+            <article class="tarjeta-reporte">
+                <div class="icono-reporte">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <div>
+                    <h2>Reporte de asistencia</h2>
+                    <p>Vista de información relacionada con la asistencia académica.</p>
+                </div>
+                <button type="button" class="boton boton-secundario" data-reporte="asistencia">
+                    <i class="fa-solid fa-eye"></i>
+                    Consultar
+                </button>
+            </article>
+
+            <article class="tarjeta-reporte">
+                <div class="icono-reporte">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div>
+                    <h2>Reporte de asignaturas</h2>
+                    <p>Vista de información general de las asignaturas académicas.</p>
+                </div>
+                <button type="button" class="boton boton-secundario" data-reporte="asignaturas">
+                    <i class="fa-solid fa-eye"></i>
+                    Consultar
+                </button>
+            </article>
+        </section>
+
+        <section class="panel">
+            <div class="panel-encabezado">
+                <div>
+                    <h2>Generar reporte</h2>
+                    <p>Selecciona los criterios para preparar la vista del reporte.</p>
+                </div>
+                <i class="fa-solid fa-file-circle-check icono-panel"></i>
+            </div>
+
+            <form id="form-reporte">
+                <div class="formulario-grid">
+                    <div class="campo">
+                        <label for="tipo-reporte">Tipo de reporte</label>
+                        <select id="tipo-reporte" name="tipo-reporte">
+                            <option value="" selected></option>
+                            <option value="estudiantes">Estudiantes</option>
+                            <option value="calificaciones">Calificaciones</option>
+                            <option value="asistencia">Asistencia</option>
+                            <option value="asignaturas">Asignaturas</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="periodo">Periodo académico</label>
+                        <input type="text" id="periodo" name="periodo" placeholder="Escribe el periodo académico">
+                    </div>
+
+                    <div class="campo">
+                        <label for="fecha-inicio">Fecha inicial</label>
+                        <input type="date" id="fecha-inicio" name="fecha-inicio">
+                    </div>
+
+                    <div class="campo">
+                        <label for="fecha-fin">Fecha final</label>
+                        <input type="date" id="fecha-fin" name="fecha-fin">
+                    </div>
+                </div>
+
+                <div class="acciones-formulario">
+                    <button type="reset" class="boton boton-secundario">
+                        Limpiar campos
+                    </button>
+                    <button type="submit" class="boton">
+                        <i class="fa-solid fa-chart-line"></i>
+                        Generar reporte
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel panel-vista">
+            <div class="panel-encabezado">
+                <div>
+                    <h2>Vista previa del reporte</h2>
+                    <p>En esta área se presentaría el contenido del informe.</p>
+                </div>
+                <i class="fa-solid fa-chart-pie icono-panel"></i>
+            </div>
+
+            <div class="vista-vacia">
+                <i class="fa-solid fa-file-circle-question"></i>
+                <h3>Sin reporte para mostrar</h3>
+                <p>La vista del reporte estará disponible cuando se implemente la funcionalidad correspondiente.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>EduControl | Sistema de Control de Calificaciones y Estudiantes</p>
+    </footer>
+
+    <script src="script/funciones.js"></script>
+    <script src="script/reportes.js"></script>
+</body>
+</html>
